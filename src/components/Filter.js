@@ -5,12 +5,14 @@ import Toolbar from "@mui/material/Toolbar";
 import { grey } from "@mui/material/colors";
 import FilterButton from "./FilterButton";
 import { data } from "../data.js";
+import {
+  MORE_FILTERS,
+  NUMBER_OF_PRIMARY_MOBILE_FILTERS,
+  NUMBER_OF_PRIMARY_TABLET_FILTERS,
+} from "../config";
 
 export default function Filter() {
-  const NUMBER_OF_TABLET_FILTERS = 4;
-  const NUMBER_OF_MOBILE_FILTERS = 2;
   const keys = Object.keys(data);
-  // console.log(data.size);
   const styles = {
     appbar: {
       backgroundColor: "white",
@@ -33,7 +35,7 @@ export default function Filter() {
       <>
         {/* Tablet  */}
         <Toolbar sx={{ display: { xs: "none", sm: "flex", md: "none" } }}>
-          {keys.slice(0, NUMBER_OF_TABLET_FILTERS).map((key, idx) => {
+          {keys.slice(0, NUMBER_OF_PRIMARY_TABLET_FILTERS).map((key, idx) => {
             return (
               <FilterButton key={idx} content={data[key]}>
                 {key}
@@ -42,15 +44,15 @@ export default function Filter() {
           })}
           {/* More Filters Button */}
           <FilterButton
-            content={trimData(NUMBER_OF_TABLET_FILTERS)}
+            content={trimData(NUMBER_OF_PRIMARY_TABLET_FILTERS)}
             moreFiltersContent={true}
           >
-            More Filters
+            {MORE_FILTERS}
           </FilterButton>
         </Toolbar>
         {/* Mobile */}
         <Toolbar sx={{ display: { xs: "flex", sm: "none" } }}>
-          {keys.slice(0, NUMBER_OF_MOBILE_FILTERS).map((key, idx) => {
+          {keys.slice(0, NUMBER_OF_PRIMARY_MOBILE_FILTERS).map((key, idx) => {
             return (
               <FilterButton key={idx} content={data[key]}>
                 {key}
@@ -59,10 +61,10 @@ export default function Filter() {
           })}
           {/* More Filters Button */}
           <FilterButton
-            content={trimData(NUMBER_OF_MOBILE_FILTERS)}
+            content={trimData(NUMBER_OF_PRIMARY_MOBILE_FILTERS)}
             moreFiltersContent={true}
           >
-            More Filters
+            {MORE_FILTERS}
           </FilterButton>
         </Toolbar>
       </>

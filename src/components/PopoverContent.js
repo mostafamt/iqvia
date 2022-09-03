@@ -49,10 +49,16 @@ function PopoverContent({ content, category, moreFiltersContent = false }) {
       display: "flex",
       flexDirection: "column",
       height: "100%",
-      justifyContent: "space-between",
+      justifyContent: "center",
       p: 4,
     },
     buttons: {
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "center",
+    },
+    actions: {
       display: "flex",
       marginTop: "1rem",
     },
@@ -64,7 +70,7 @@ function PopoverContent({ content, category, moreFiltersContent = false }) {
 
   return (
     <div style={styles.container}>
-      <div>
+      <div style={styles.buttons}>
         {content.map((item, index) => {
           return (
             <CheckButton
@@ -77,7 +83,7 @@ function PopoverContent({ content, category, moreFiltersContent = false }) {
           );
         })}
       </div>
-      <div style={styles.buttons}>
+      <div style={styles.actions}>
         <Button sx={styles.cancelButton} onClick={onCancelHandler}>
           cancel
         </Button>

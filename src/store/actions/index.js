@@ -8,15 +8,15 @@ export const add_filter = (parent, content) => {
   };
 };
 
-export const trie = () => {
-  return {
-    type: actionTypes.TRY,
-  };
-};
-
 export const remove_filter = (parent) => {
   return {
     type: actionTypes.REMOVE_FILTER,
     parent,
+  };
+};
+
+export const clearAll = () => {
+  return {
+    type: actionTypes.CLEAR,
   };
 };

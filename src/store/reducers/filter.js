@@ -19,6 +19,10 @@ const reducer = (state = initialFilters, action) => {
         ...state,
         [_parent]: [],
       };
+    case actionTypes.CLEAR:
+      return {
+        ...initialFilters,
+      };
     default:
       return {
         ...state,

@@ -4,6 +4,8 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import BPopover from "./BPopover";
 import { useSelector } from "react-redux";
+import styles from "../style/popover.module.css";
+import { MORE_FILTERS } from "../config";
 
 function FilterButton({ content, children, moreFiltersContent }) {
   const count = useSelector((state) => {
@@ -11,7 +13,14 @@ function FilterButton({ content, children, moreFiltersContent }) {
   });
 
   const popover = (
-    <Popover id="popover-basic" style={{ minWidth: "95%" }}>
+    <Popover
+      id="popover-basic"
+      // className={styles.custom_popover}
+      className={[
+        styles.custom_popover,
+        children === MORE_FILTERS ? styles.more_popover : null,
+      ].join(" ")}
+    >
       <BPopover
         content={content}
         moreFiltersContent={moreFiltersContent}
@@ -27,8 +36,9 @@ function FilterButton({ content, children, moreFiltersContent }) {
         variant={count && count.length > 0 ? "outlined" : "contained"}
         sx={{
           mr: 1,
-          fontSize: { xs: "0.8rem", sm: ".8rem" },
+          fontSize: { xs: "0.8rem", sm: ".85rem", md: "1rem" },
           ml: !count ? "auto" : "inherit",
+          px: { xs: 1, sm: 1.6, md: 2 },
         }}
       >
         {children}

@@ -16,8 +16,12 @@ function CheckButton({ content, onAddButton, onRemoveButton, checked }) {
       onClick={clickHandler}
       sx={{
         mr: 1,
-        fontSize: ".8rem",
-        margin: ".5rem",
+        fontSize: { sm: ".8rem", md: "1rem" },
+        // fontSize: ".8rem",
+        margin: ".2rem",
+        px: 0.5,
+        py: 0.2,
+        textTransform: "capitalize",
         // fontSize: "2rem",
       }}
     >

@@ -9,11 +9,35 @@ import PopoverContent from "./PopoverContent";
 import AccordionTitle from "./AccordionTitle";
 
 export default function FilterAccordion({ content }) {
+  const style = {
+    summary: {
+      "& .MuiAccordionSummary-root": {
+        bgcolor: "red",
+        my: 0,
+        height: 0,
+        // p: 0,
+      },
+      "& .Mui-expanded": {
+        bgcolor: "red",
+        m: 0,
+      },
+      ".MuiButtonBase-root": {
+        bgcolor: "red",
+        m: 0,
+        p: 0,
+      },
+    },
+  };
+
   return (
     <div>
       {Object.keys(content).map((category, idx) => {
         return (
-          <Accordion key={idx}>
+          <Accordion
+            key={idx}
+            TransitionProps={{ unmountOnExit: true }}
+            // sx={style.summary}
+          >
             <AccordionTitle>{category}</AccordionTitle>
             {/* <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>{category}</Typography>
