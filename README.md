@@ -1,4 +1,4 @@
-# IQvia (Frontend)
+# Menu & Smart Picker
 <b>Description: </b>When dealing with e-commerce websites, we usually apply a lot of filters, we're going to build a menu and a smart size-picker
 from scratch to narrow down the options or to choose the right size/color/brand we want to buy.<br>
 
@@ -82,5 +82,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# iqvia
