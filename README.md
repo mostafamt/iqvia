@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# IQvia (Frontend)
+<b>Description: </b>When dealing with e-commerce websites, we usually apply a lot of filters, we're going to build a menu and a smart size-picker
+from scratch to narrow down the options or to choose the right size/color/brand we want to buy.<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Dependencies
+1- React<br>
+2- MUI<br>
+3- Emotion<br>
+4- Styled Components<br>
+
+## Installation
+1- install nodejs<br>
+2- install npm (node package manager) <br>
+3- run : npm install , it will install all dependencies.<br>
+4- run : npm run start, to start in development mode .<br>
+or you can already open Live version from: https://iqvia-seven.vercel.app/ <br>
 
 ## Available Scripts
 
