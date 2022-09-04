@@ -16,6 +16,8 @@
   left: var(--left-margin-popover) !important;
   top: var(--left-margin-popover) !important;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  /* background-color: #ff7043; */
 }
 
 .more_popover {

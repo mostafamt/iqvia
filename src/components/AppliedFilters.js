@@ -6,6 +6,8 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { add_filter, clearAll } from "../store/actions/index";
 import { grey } from "@mui/material/colors";
 import Divider from "@mui/material/Divider";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import FilterButton from "./Buttons/FilterButton";
 
 function AppliedFilters() {
   const dispatch = useDispatch();
@@ -41,8 +43,6 @@ function AppliedFilters() {
       justifyContent: "space-between",
       alignItems: "center",
       borderRadius: 0,
-      // color: "#acacac",
-      // borderColor: "#f50057",
     },
     title: { fontSize: ".8rem" },
     icon: { fontSize: "1rem", ml: 1 },
@@ -52,22 +52,13 @@ function AppliedFilters() {
   return (
     <>
       <Box sx={styles.box}>
-        <Box sx={styles.filters}>Filters: {isFilters && "-none-"}</Box>
+        <Box sx={styles.filters}>Filters: </Box>
         <Box sx={styles.content}>
           {Object.keys(filters).map((category) => {
             return filters[category].map((item) => {
               isFilters = true;
               return (
-                <Button
-                  key={item.id}
-                  variant="outlined"
-                  // color="secondary"
-                  sx={styles.button}
-                  onClick={(e) => clickHandler(e, category, item)}
-                >
-                  <span style={styles.title}>{item.title}</span>
-                  <ClearIcon sx={styles.icon} />
-                </Button>
+                <FilterButton key={item.id} category={category} item={item} />
               );
             });
           })}
@@ -84,7 +75,6 @@ function AppliedFilters() {
           )}
         </Box>
       </Box>
-      {/* <Divider variant="inset" /> */}
       <hr />
     </>
   );

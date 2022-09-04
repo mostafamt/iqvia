@@ -1,13 +1,9 @@
 import * as actionTypes from "../actionTypes";
-import { data } from "../../data";
+import { initialStore } from "../../Utils";
 
-let initialFilters = {};
+let initialState = initialStore();
 
-Object.keys(data).forEach((key, idx) => {
-  initialFilters = { ...initialFilters, [key]: [] };
-});
-
-const reducer = (state = initialFilters, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_FILTER:
       let parent = action.parent;
@@ -21,7 +17,7 @@ const reducer = (state = initialFilters, action) => {
       };
     case actionTypes.CLEAR:
       return {
-        ...initialFilters,
+        ...initialState,
       };
     default:
       return {

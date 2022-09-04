@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import CheckButton from "./CheckButton";
-import FilterAccordion from "./FilterAccordion";
+import CheckButton from "./Buttons/CheckButton";
 import { add_filter, remove_filter } from "../store/actions/index";
 import { useDispatch, useSelector } from "react-redux";
 

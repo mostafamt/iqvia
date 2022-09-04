@@ -1,16 +1,20 @@
 import Home from "./Pages/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createStore } from "@reduxjs/toolkit";
-import reducer from "./store/reducers";
+import reducers from "./store/reducers";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./themes";
 
-const store = createStore(reducer);
+const store = createStore(reducers);
 
 function App() {
   return (
-    <Provider store={store}>
-      <Home />
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <Home />
+      </Provider>
+    </ThemeProvider>
   );
 }
 
