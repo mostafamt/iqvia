@@ -39,11 +39,9 @@ function CategoryButton({ content, children, moreFiltersContent }) {
         variant={Boolean(count) ? "contained" : ""}
         // variant={Boolean(count) ? "outlined" : "contained"}
         sx={{
-          m: 0,
-          // mr: 1,
           fontSize: { xs: "0.8rem", sm: ".85rem", md: "1rem" },
+          mr: children === MORE_FILTERS ? 0 : 1,
           ml: children === MORE_FILTERS ? "auto" : "inherit",
-          // mr: children === MORE_FILTERS ? "auto" : "inherit",
           px: { xs: 1, sm: 1.6, md: 2 },
         }}
         endIcon={children === MORE_FILTERS ? <AddIcon /> : null}

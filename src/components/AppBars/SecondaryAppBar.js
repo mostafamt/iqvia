@@ -35,7 +35,7 @@ function SecondaryAppBar({ data }) {
       />
       <ToolBar
         data={data}
-        sx={{ display: { xs: "flex", sm: "none" } }}
+        sx={{ display: { xs: "flex", sm: "none" }, px: 1 }}
         primaryCategories={NUMBER_OF_PRIMARY_MOBILE_CATEGORIES}
       />
     </AppBar>
